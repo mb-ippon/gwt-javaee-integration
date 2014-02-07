@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+         
+    <!-- Servlet request factory -->
+	<servlet>
+		<servlet-name>requestFactoryServlet</servlet-name>
+		<servlet-class>com.ippon.formation.gwt.server.servlet.RFHibernateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>requestFactoryServlet</servlet-name>
+		<url-pattern>/gwtRequest</url-pattern>
+	</servlet-mapping>
+         
+	<!-- servlet rpc -->
+	<servlet>
+	  <servlet-name>playerService</servlet-name>
+	  <servlet-class>
+	    com.ippon.formation.gwt.server.service.PlayerRPCImpl
+	  </servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>playerService</servlet-name>
+	  <url-pattern>/FormationGWT/player</url-pattern>
+	</servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>welcome.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
