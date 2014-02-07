@@ -18,7 +18,8 @@
 		<!-- plugin -->
 		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<webapp.directory>${project.build.directory}/${artifactId}</webapp.directory>
+		<war.name>${artifactId}</war.name>
+		<webapp.directory>${project.build.directory}/${war.name}</webapp.directory>
 		<output.directory>${webapp.directory}/WEB-INF/classes</output.directory>
 		<project.webxml>${webapp.directory}/WEB-INF/web.xml</project.webxml>
 		<project.java.source>${basedir}/src/main/java</project.java.source>
@@ -30,7 +31,7 @@
 		<gwt.version>2.5.1</gwt.version>
 		<!-- plugin -->
 		<gwt.module>com.ippon.formation.gwt.Formation_GWT</gwt.module>
-		<gwt.target>welcome.html</gwt.target>
+		<gwt.target>http://localhost:8080/${war.name}/welcome.html</gwt.target>
 		<gwt.rpc.path>**/domain/bindery/rpc/*RPC.java</gwt.rpc.path>
 		<gwt.view.css>com/ippon/formation/gwt/client/ui/view/MyCss.css</gwt.view.css>
 		<gwt.i18n>com.ippon.formation.gwt.client.ui.resources.Messages</gwt.i18n>
@@ -124,7 +125,7 @@
 
 	<build>
 		<outputDirectory>${output.directory}</outputDirectory>
-		<finalName>${artifactId}</finalName>
+		<finalName>${war.name}</finalName>
 		
 		<plugins>
 			<plugin>
@@ -138,6 +139,7 @@
 					<copyWebapp>true</copyWebapp>
 					<module>${gwt.module}</module>
 					<runTarget>${gwt.target}</runTarget>
+					<noServer>true</noServer>
 					<!-- gwt:css config -->
 					<generateDirectory>${project.java.source}</generateDirectory>
 					<cssFiles>
