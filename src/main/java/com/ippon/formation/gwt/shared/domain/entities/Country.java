@@ -1,13 +1,8 @@
 package com.ippon.formation.gwt.shared.domain.entities;
 
-import java.io.Serializable;
+import com.google.gwt.user.client.rpc.IsSerializable;
 
-public class Country implements Serializable {
-
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 8873060740655964600L;
+public class Country implements IsSerializable {
 
     private String code;
     private String libelle;

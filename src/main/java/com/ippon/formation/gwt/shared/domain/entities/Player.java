@@ -1,14 +1,10 @@
 package com.ippon.formation.gwt.shared.domain.entities;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Player implements Serializable {
+import com.google.gwt.user.client.rpc.IsSerializable;
 
-    /**
-     * 
-     */
-    private static final long serialVersionUID = -4312165633377357234L;
+public class Player implements IsSerializable {
 
     public Player() {
 

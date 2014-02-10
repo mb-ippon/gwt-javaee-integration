@@ -6,7 +6,7 @@ import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 import com.ippon.formation.gwt.shared.domain.entities.Player;
 
-@RemoteServiceRelativePath("player")
+@RemoteServiceRelativePath("PlayerRPC.rpc")
 public interface PlayerRPC extends RemoteService {
 
     List<Player> findClassement();
