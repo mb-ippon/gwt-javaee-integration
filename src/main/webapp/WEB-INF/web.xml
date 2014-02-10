@@ -26,6 +26,17 @@
 	  	<servlet-name>playerService</servlet-name>
 	  	<url-pattern>*.rpc</url-pattern>
 	</servlet-mapping>
+	
+	<!-- filtre OSIV -->
+	<filter>
+		<filter-name>OSIVFilter</filter-name>
+		<filter-class>com.ippon.formation.gwt.server.filter.OSIVFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>OSIVFilter</filter-name>
+		<url-pattern>/gwtRequest/*</url-pattern>
+	</filter-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
