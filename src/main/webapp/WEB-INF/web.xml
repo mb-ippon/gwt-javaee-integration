@@ -8,7 +8,7 @@
     <!-- Servlet request factory -->
 	<servlet>
 		<servlet-name>requestFactoryServlet</servlet-name>
-		<servlet-class>com.ippon.formation.gwt.server.servlet.RFHibernateServlet</servlet-class>
+		<servlet-class>com.google.web.bindery.requestfactory.server.RequestFactoryServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -18,13 +18,13 @@
          
 	<!-- servlet rpc -->
 	<servlet>
-	  <servlet-name>playerService</servlet-name>
-	  <servlet-class>com.ippon.formation.gwt.server.servlet.RPCDispatcher
-	  </servlet-class>
+		<servlet-name>playerService</servlet-name>
+	  	<servlet-class>com.ippon.formation.gwt.server.servlet.RPCDispatcher
+	  	</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	  <servlet-name>playerService</servlet-name>
-	  <url-pattern>*.rpc</url-pattern>
+	  	<servlet-name>playerService</servlet-name>
+	  	<url-pattern>*.rpc</url-pattern>
 	</servlet-mapping>
   
   <!-- Default page to serve -->

@@ -2,12 +2,10 @@ package com.ippon.formation.gwt.server.domain.facade;
 
 import com.google.web.bindery.requestfactory.shared.Locator;
 import com.ippon.formation.gwt.server.domain.entities.CountryEntity;
-import com.ippon.formation.gwt.server.service.CountryService;
+import com.ippon.formation.gwt.server.service.AppServicesLocator;
 import com.ippon.formation.gwt.server.service.CountryServiceImpl;
 
 public class CountryLocator extends Locator<CountryEntity, Long> {
-
-    CountryService service = new CountryServiceImpl();
 
     @Override
     public CountryEntity create(Class<? extends CountryEntity> clazz) {
@@ -16,7 +14,7 @@ public class CountryLocator extends Locator<CountryEntity, Long> {
 
     @Override
     public CountryEntity find(Class<? extends CountryEntity> clazz, Long id) {
-        return service.findCountry(id);
+        return AppServicesLocator.lookupBean(CountryServiceImpl.class).findCountry(id);
     }
 
     @Override
